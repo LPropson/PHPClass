@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Geneva, 'Lucida Sans', "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+    color: #222;
+    line-height: 1.8;
+}
+
+.page-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.site-header{
+    height: 5.625rem; /* 90px */
+    background-color: blue;
+}
+
+.site-header h1{
+    line-height: 5.625rem;
+    color: yellow;
+    font-size: 1.8rem;
+    padding-left: 1.25rem; /* 20px */
+    white-space: nowrap;
+}
+
+.flex-box{
+    display: table;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.main-content, .main-nav, .right-sidebar{
+    padding: 2rem;
+}
+
+.main-nav{
+    width: 250px; min-width: 170px;
+}
+
+.main-content{
+    width: 100%;
+}
+
+.img img{
+    float: left;
+    display: flex;
+    margin-right: 20px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.main-nav{
+    background-color: #efefef;
+    padding: 15px;
+}
+
+.main-nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.main-nav li{
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-nav ul li a{
+    display: block;
+    padding: 5px;
+    background-color: #efefef;
+    color: #68259A;
+    text-decoration: none;
+    width: 100%;
+}
+
+.main-nav ul li a:hover{
+    background-color: rgba(255, 255, 255 255, .65);
+}
+
+.main-content{
+    display: table-cell;
+}
+
+
+.right-sidebar{
+    border-left: 1px dashed #ccc;
+    border-right: 1px solid #ccc;
+    width: 180px;
+}
+
+footer{
+    background-color: blue;
+    height: 50px;
+    color: yellow;
+    font-size: .8rem;
+    line-height: 50px;
+    padding: 0 20px;
+}
