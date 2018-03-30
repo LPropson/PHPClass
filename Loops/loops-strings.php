@@ -19,7 +19,7 @@
         </vav>
 
         <section class="main-content" style="text-align: center;">
-            <h2>Project Name</h2>
+            <h2>Loops & Strings</h2>
             <div class="content">
                 <p>
                     <?php
@@ -43,7 +43,7 @@
                     //Loops - while
                     $i = 1;
                     while ($i < 7) {
-                        echo "<h$i>Hello World!</$i>";
+                        echo "<h$i>Hello World!</h$i>";
                         //$i = $i + 1;
                         //$i += 1;
                         $i++;
@@ -70,6 +70,31 @@
                     for($i = 1; $i < 7; $i++){
                         echo "<h$i>Hello World!!!!</$i>";
                     }
+
+                    $full_name = "Doug Smith";
+
+                    //D o u g S m i t h
+                    //1 2 3 4 5 6 7 8 9
+
+                    $position = strpos($full_name, " ");
+                    echo $position;
+
+                    echo "<br><br><hr><br><br>";
+                    echo $full_name;
+                    echo "<br>";
+
+                    $full_name = strtoupper($full_name);
+                    echo $full_name;
+
+                    $full_name = strtolower($full_name);
+                    echo "<br>";
+                    echo $full_name;
+                    echo "<br><br><hr><br><br>";
+
+                    $nameParts = explode(' ', $full_name);
+                    echo $nameParts[0];
+                    echo "<br>";
+                    echo $nameParts[1];
 
                     ?>
 

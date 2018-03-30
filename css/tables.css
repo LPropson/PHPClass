@@ -1,0 +1,38 @@
+table{
+    max-width: 100%;
+    overflow-x:scroll;
+}
+
+#error{color: red}
+
+thead th{
+    text-align: left;
+}
+
+th, td{
+    padding: 2px;
+}
+
+/* some basic table styles */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    color: rebeccapurple;
+}
+
+tbody tr:hover{
+    background-color: #f4f4f4;
+}
+
+thead th{
+    text-align: left;
+    border-bottom: 1px solid rebeccapurple;
+}
+
+td{
+    border-bottom: 1px solid lavender;
+}
+
+th, td{
+    padding: 5px 5px 5px 8px;
+}

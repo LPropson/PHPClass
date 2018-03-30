@@ -1,3 +1,21 @@
+<?php
+    session_start();
+
+    $sessiontype = "";
+
+    if($_SESSION[Role]==1){
+        $sessiontype = "Administrator";
+        echo "<body style='background-color:pink'>";
+    }elseif($_SESSION[Role]==2){
+        $sessiontype = "Operator";
+        echo "<body style='background-color:orange'>";
+    }else{
+        $sessiontype = "Member";
+        echo "<body style='background-color:red'>";
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,9 +37,11 @@
         </nav>
 
         <section class="main-content">
-            <h2>Project Name</h2>
+            <h1>Member Page</h1>
+            <h2>Role type</h2>
             <div class="content">
-                Project Content
+                <p>Role type: <?= $sessiontype ?>
+                </p>
             </div>
         </section>
 
