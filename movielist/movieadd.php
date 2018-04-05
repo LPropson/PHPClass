@@ -1,4 +1,5 @@
 <?php
+// Testing
 
 if(isset($_POST["txtTitle"])) {
     if (isset($_POST["txtRating"])) {

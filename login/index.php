@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+// Testing
 
 if(isset($_POST["txtEmail"])) {
     if (isset($_POST["txtPassword"])) {

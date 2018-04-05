@@ -2,6 +2,7 @@
 /*
 * This is a Magic 8 Ball
 */
+// Testing
 
 //Starting a session
 session_start();

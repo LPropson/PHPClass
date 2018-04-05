@@ -2,7 +2,7 @@
 session_start();
 $errmsg = "";
 $key = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
-
+//Testing
     if($_SESSION[Role]!=1){
         header("Location:index.php");
     }

@@ -1,4 +1,6 @@
 <?php
+// Testing
+
 include "../Includes/dbConn.php";
 
 if(isset($_GET["id"])){
