@@ -1,4 +1,7 @@
 <?php
+
+$key = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
+
 include "../Includes/dbConn.php";
 
 if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POST[txtStreetAddress]))
@@ -164,7 +167,7 @@ if(isset($_GET["id"])){
                         </tr>
                         <tr height = "40">
                             <th>Password</th>
-                            <td align="center"><input id="txtPassword" name="txtPassword" type="text" size="50" value="<?=$cpassword?>"></td>
+                            <td align="center"><input id="txtPassword" name="txtPassword" type="password" size="50" value="<?=$cpassword?>"></td>
                         </tr>
                         <tr height = "40">
                             <td colspan="2"  align="center">

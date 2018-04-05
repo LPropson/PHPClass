@@ -873,120 +873,125 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="215" parent="201" name="PRIMARY">
+    <column id="215" parent="201" name="CKey">
+      <Position>11</Position>
+      <DataType>varchar(32)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="216" parent="201" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CustomerID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="216" parent="202" name="memberID">
+    <column id="217" parent="202" name="memberID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="202" name="memberName">
+    <column id="218" parent="202" name="memberName">
       <Position>2</Position>
       <DataType>varchar(75)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="202" name="memberEmail">
+    <column id="219" parent="202" name="memberEmail">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="202" name="memberPassword">
+    <column id="220" parent="202" name="memberPassword">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="220" parent="202" name="RoleID">
+    <column id="221" parent="202" name="RoleID">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="202" name="MemberKey">
+    <column id="222" parent="202" name="MemberKey">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="222" parent="202" name="memberLogin_memberID_uindex">
+    <index id="223" parent="202" name="memberLogin_memberID_uindex">
       <ColNames>memberID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="223" parent="202" name="memberLogin_memberEmail_uindex">
+    <index id="224" parent="202" name="memberLogin_memberEmail_uindex">
       <ColNames>memberEmail</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="224" parent="202" name="PRIMARY">
+    <key id="225" parent="202" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>memberID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="225" parent="202" name="memberLogin_memberID_uindex">
+    <key id="226" parent="202" name="memberLogin_memberID_uindex">
       <ColNames>memberID</ColNames>
       <UnderlyingIndexName>memberLogin_memberID_uindex</UnderlyingIndexName>
     </key>
-    <key id="226" parent="202" name="memberLogin_memberEmail_uindex">
+    <key id="227" parent="202" name="memberLogin_memberEmail_uindex">
       <ColNames>memberEmail</ColNames>
       <UnderlyingIndexName>memberLogin_memberEmail_uindex</UnderlyingIndexName>
     </key>
-    <column id="227" parent="203" name="movieID">
+    <column id="228" parent="203" name="movieID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="228" parent="203" name="movieTitle">
+    <column id="229" parent="203" name="movieTitle">
       <Position>2</Position>
       <DataType>varchar(75)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="203" name="movieRating">
+    <column id="230" parent="203" name="movieRating">
       <Position>3</Position>
       <DataType>varchar(5)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="230" parent="203" name="movielist_movieID_uindex">
+    <index id="231" parent="203" name="movielist_movieID_uindex">
       <ColNames>movieID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="231" parent="203" name="PRIMARY">
+    <key id="232" parent="203" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>movieID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="232" parent="203" name="movielist_movieID_uindex">
+    <key id="233" parent="203" name="movielist_movieID_uindex">
       <ColNames>movieID</ColNames>
       <UnderlyingIndexName>movielist_movieID_uindex</UnderlyingIndexName>
     </key>
-    <column id="233" parent="204" name="RoleID">
+    <column id="234" parent="204" name="RoleID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="204" name="RoleValue">
+    <column id="235" parent="204" name="RoleValue">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="235" parent="204" name="role_RoleID_uindex">
+    <index id="236" parent="204" name="role_RoleID_uindex">
       <ColNames>RoleID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="236" parent="204" name="PRIMARY">
+    <key id="237" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RoleID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="237" parent="204" name="role_RoleID_uindex">
+    <key id="238" parent="204" name="role_RoleID_uindex">
       <ColNames>RoleID</ColNames>
       <UnderlyingIndexName>role_RoleID_uindex</UnderlyingIndexName>
     </key>

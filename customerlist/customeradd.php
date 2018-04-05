@@ -1,8 +1,15 @@
 <?php
 
-if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POST[txtStreetAddress]))
-    && (isset($_POST[txtCity])) && (isset($_POST[txtState])) && (isset($_POST[txtZip]))
-    && (isset($_POST[txtPhone])) && (isset($_POST[txtEmail])) && (isset($_POST[txtPassword]))){
+$errmsg = "";
+$key = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
+
+if(($_POST[txtPassword])!= ($_POST[txtPassword2])){
+    $errmsg = "Passwords don't Match!";
+}else{
+
+    if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POST[txtStreetAddress]))
+        && (isset($_POST[txtCity])) && (isset($_POST[txtState])) && (isset($_POST[txtZip]))
+        && (isset($_POST[txtPhone])) && (isset($_POST[txtEmail])) && (isset($_POST[txtPassword]))) {
 
         $fname = $_POST[txtFirstName];
         $lname = $_POST[txtLastName];
@@ -16,17 +23,17 @@ if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POS
 
         include "../Includes/dbConn.php";
 
-    //echo "everything worked for DB";
+        //echo "everything worked for DB";
 
-    //exit();
+        //exit();
 
-        try{
+        try {
             $db = new PDO($dsn, $username, $password, $options);
 
             //system prepares what needs to be executed
             $sql = $db->prepare("insert into customerlist (Firstname, Lastname, StrAddress,
-                                  City, State, Zip, Phone, Email, CPassword) 
-                                  VALUE (:FName,:LName,:StrAddress,:City,:State,:Zip,:Phone,:Email,:Password)");
+                                      City, State, Zip, Phone, Email, CPassword, CKey) 
+                                      VALUE (:FName,:LName,:StrAddress,:City,:State,:Zip,:Phone,:Email,:Password,:cKey)");
 
             $sql->bindValue(":FName", $fname);
             $sql->bindValue(":LName", $lname);
@@ -36,18 +43,18 @@ if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POS
             $sql->bindValue(":Zip", $zip);
             $sql->bindValue(":Phone", $phone);
             $sql->bindValue(":Email", $email);
-            $sql->bindValue(":Password", $cpassword);
+            $sql->bindValue(":Password", md5($cpassword . $key));
+            $sql->bindValue(":cKey", $key);
 
             //execute - returns all rows from table
             $sql->execute();
-        }
-
-        catch (PDOException $e){
-            $error = $e ->getMessage();
+        } catch (PDOException $e) {
+            $error = $e->getMessage();
             echo "Error: $error";
         }
 
         header("Location:customerlist.php");
+    }
 
 }
 
@@ -74,6 +81,7 @@ if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POS
         </nav>
 
         <section class="main-content">
+            <h3 id="error"><?=$errmsg?></h3>
             <h2>Customer Add</h2>
             <div class="content">
                 <form method="post">
@@ -115,7 +123,11 @@ if((isset($_POST[txtFirstName])) && (isset($_POST[txtLastName])) && (isset($_POS
                         </tr>
                         <tr height = "40">
                             <th>Password</th>
-                            <td align="center"><input id="txtPassword" name="txtPassword" type="text" size="50"></td>
+                            <td align="center"><input id="txtPassword" name="txtPassword" type="password" size="50"></td>
+                        </tr>
+                        <tr height = "40">
+                            <th>Confirm Password</th>
+                            <td align="center"><input id="txtPassword2" name="txtPassword2" type="password" size="50"></td>
                         </tr>
                         <tr height = "40">
                             <td colspan="2"  align="center">
