@@ -2,7 +2,6 @@
 /*
 * This is a Dice Roll
 */
-// Testing
 
 // Fill a list of rolls
 $diceroll = array();

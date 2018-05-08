@@ -4,8 +4,6 @@
 * This is a Countdown Timer
 * Burning Man 8-25-2020
 */
-
-// testing
 $secPerMin = 60;
 $secPerHour = 60 * $secPerMin;
 $secPerDay = 24 * $secPerHour;

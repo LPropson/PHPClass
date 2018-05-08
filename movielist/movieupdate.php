@@ -1,5 +1,3 @@
-// Testing
-
 <?php
 include "../Includes/dbConn.php";
 

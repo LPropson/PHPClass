@@ -1,5 +1,4 @@
 <?php
-//DB connection testing
 $dsn = 'mysql:host=localhost;dbname=phpclass';
 $username = 'dbuser';
 $password = 'dbdev123';

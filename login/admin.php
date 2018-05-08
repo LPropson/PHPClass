@@ -2,7 +2,7 @@
 session_start();
 $errmsg = "";
 $key = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
-//Testing
+
     if($_SESSION[Role]!=1){
         header("Location:index.php");
     }
@@ -118,9 +118,33 @@ $key = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X', mt_rand(0, 65535), mt_rand(0,
                         <th>Role</th>
                         <td align="center">
                             <select id="txtRole" name="txtRole">
-                                <option value="1">Admin</option>
-                                <option value="2">Operator</option>
-                                <option value="3">Member</option>
+
+                                <?php
+                                    include "../Includes/dbConn.php";
+
+                                    try{
+                                        $db = new PDO($dsn, $username, $password, $options);
+                                        $sql = $db->prepare("select * from role");
+                                        $sql->execute();
+
+                                        $row = $sql->fetch();
+
+                                        while($row != null){
+                                            $id = $row['RoleID'];
+                                            $name = $row['RoleValue'];
+                                            echo '<option value="'.$id.'">'.$name.'</option>';
+                                            $row = $sql->fetch();
+                                        }
+
+                                    }
+
+                                    catch (PDOException $e) {
+                                        $error = $e->getMessage();
+                                        echo "Error: $error";
+                                    }
+
+                                ?>
+
                             </select>
                         </td>
                     </tr>
